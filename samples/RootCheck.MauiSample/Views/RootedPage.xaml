@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RootCheck.MauiSample.Views.RootedPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Rooted">
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Your device is rooted"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -14,12 +14,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\RootCheck.Core\RootCheck.Core.csproj" />
+	  <Compile Remove="Platforms\MacCatalst\**" />
+	  <EmbeddedResource Remove="Platforms\MacCatalst\**" />
+	  <MauiCss Remove="Platforms\MacCatalst\**" />
+	  <MauiXaml Remove="Platforms\MacCatalst\**" />
+	  <None Remove="Platforms\MacCatalst\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Platforms\MacCatalyst\" />
-	  <Folder Include="Platforms\Windows\" />
+	  <ProjectReference Include="..\RootCheck.Core\RootCheck.Core.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)'=='Release' ">

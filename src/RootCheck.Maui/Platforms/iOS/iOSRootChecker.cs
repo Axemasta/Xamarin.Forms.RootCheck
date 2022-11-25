@@ -7,8 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace RootCheck.Maui
 {
-    // All the code in this file is only included on iOS.
-    public class iOSRootChecker : IChecker
+    internal sealed class iOSRootChecker : IRootChecker
     {
         private static readonly List<string> KnownDangerousFiles = new List<string>
             {
@@ -79,7 +78,7 @@ namespace RootCheck.Maui
         }
 
         /// <summary>
-        ///  Check potential folders which indicate a jailbreak
+        /// Check potential folders which indicate a jailbreak
         /// </summary>
         /// <returns></returns>
         private bool CheckPotentialDangerousFolders()

@@ -8,8 +8,7 @@ using System.Collections.Generic;
 
 namespace RootCheck.Maui
 {
-    // All the code in this file is only included on Android.
-    public class AndroidRootChecker : IChecker
+    internal sealed class AndroidRootChecker : IRootChecker
     {
         static readonly string BINARY_SU = "su";
         static readonly string BINARY_BUSYBOX = "busybox";
@@ -152,7 +151,6 @@ namespace RootCheck.Maui
          */
         private bool DetectPotentiallyDangerousApps(params string[] additionalDangerousApps)
         {
-
             // Create a list of package names to iterate over from constants any others provided
             if (additionalDangerousApps != null && additionalDangerousApps.Length > 0)
             {
@@ -169,7 +167,6 @@ namespace RootCheck.Maui
          */
         private bool DetectRootCloakingApps(params string[] additionalRootCloakingApps)
         {
-
             // Create a list of package names to iterate over from constants any others provided
             if (additionalRootCloakingApps != null && additionalRootCloakingApps.Length > 0)
             {

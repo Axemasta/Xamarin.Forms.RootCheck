@@ -1,4 +1,5 @@
 ﻿using RootCheck.Core;
+using RootCheck.Core.Exceptions;
 using System;
 using System.ComponentModel;
 using System.Threading;
@@ -10,33 +11,40 @@ namespace RootCheck.Maui
     /// </summary>
     public static class RootChecker
     {
-        private static IChecker customInstance;
+        private static IRootChecker customInstance;
 
-        private static readonly Lazy<IChecker> platformImplementation = new Lazy<IChecker>(CreateChecker, LazyThreadSafetyMode.PublicationOnly);
+        private static readonly Lazy<IRootChecker> rootChecker = new Lazy<IRootChecker>(CreateChecker, LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Returns whether the device is rooted
         /// </summary>
-        public static bool IsDeviceRooted
+        public static IRootChecker Current => customInstance ?? rootChecker.Value;
+
+        public static bool IsDeviceRooted => Current.IsDeviceRooted();
+
+        private static IRootChecker CreateChecker()
         {
-            get
-            {
-                var checker = customInstance ?? platformImplementation.Value;
+#if ANDROID
+            return new AndroidRootChecker();
+#endif
 
-                if (checker is null)
-                    return false;
+#if IOS
+            return new iOSRootChecker();
+#endif
 
-                return checker.IsDeviceRooted();
-            }
-        }
+#if MACCATALYST
+            return new macOSRootChecker();
+#endif
 
-        private static IChecker CreateChecker()
-        {
-            return new PlatformChecker();
+#if WINDOWS
+            return new WindowsRootChecker();
+#endif
+
+            throw new NotImplementedInReferenceAssemblyException();
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public static void SetInstance(IChecker instance)
+        public static void SetInstance(IRootChecker instance)
         {
             // Allow easier mocking from unit tests.
             customInstance = instance;
