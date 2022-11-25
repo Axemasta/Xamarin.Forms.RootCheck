@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RootCheck.Forms", "src\RootCheck.Forms\RootCheck.Forms.csproj", "{EA441BE4-EE6D-4274-8EA1-FCC6F47EC090}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RootCheck.Core", "src\RootCheck.Core\RootCheck.Core.csproj", "{6EDCB40F-1D94-497A-95C3-AAF21EDA3CC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70A5F86B-205C-49FA-9BF5-B985F89D18CD}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA441BE4-EE6D-4274-8EA1-FCC6F47EC090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA441BE4-EE6D-4274-8EA1-FCC6F47EC090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA441BE4-EE6D-4274-8EA1-FCC6F47EC090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA441BE4-EE6D-4274-8EA1-FCC6F47EC090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDCB40F-1D94-497A-95C3-AAF21EDA3CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDCB40F-1D94-497A-95C3-AAF21EDA3CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDCB40F-1D94-497A-95C3-AAF21EDA3CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDCB40F-1D94-497A-95C3-AAF21EDA3CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06205851-FB15-4D91-B4DE-8B11467710B6}
+	EndGlobalSection
+EndGlobal

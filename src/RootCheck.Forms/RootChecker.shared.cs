@@ -1,5 +1,7 @@
-﻿using RootCheck.Core;
-using System;
+﻿using System;
+using System.ComponentModel;
+using System.Threading;
+using RootCheck.Core;
 
 namespace Xamarin.Forms.RootCheck
 {
@@ -8,12 +10,14 @@ namespace Xamarin.Forms.RootCheck
     /// </summary>
     public static class RootCheck
     {
-        static Lazy<IChecker> implementation = new Lazy<IChecker>(() => CreateChecker(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        private static IChecker customInstance;
+
+        private static Lazy<IChecker> implementation = new Lazy<IChecker>(CreateChecker, LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Gets if the plugin is supported on the current platform.
         /// </summary>
-        public static bool IsSupported => implementation.Value == null ? false : true;
+        public static bool IsSupported => implementation.Value != null;
 
         /// <summary>
         /// Returns whether the device is rooted
@@ -22,7 +26,7 @@ namespace Xamarin.Forms.RootCheck
         {
             get
             {
-                IChecker checker = implementation.Value;
+                var checker = customInstance ?? implementation.Value;
 
                 if (checker is null)
                 {
@@ -47,5 +51,11 @@ namespace Xamarin.Forms.RootCheck
         internal static Exception NotImplementedInReferenceAssembly() =>
             new NotImplementedException("This functionality is not implemented in the portable version of this assembly.  You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.");
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void SetInstance(IChecker instance)
+        {
+            // Allow easier mocking from unit tests.
+            customInstance = instance;
+        }
     }
 }

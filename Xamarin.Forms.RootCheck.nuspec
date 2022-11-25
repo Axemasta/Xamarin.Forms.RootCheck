@@ -7,7 +7,7 @@
     <owners>Tam Lai</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/tam892007/Xamarin.Forms.RootCheck/</projectUrl>
+    <projectUrl>https://github.com/tam892007/RootCheck.Forms/</projectUrl>
     <icon>icon.png</icon>
     <description>A Xamarin Forms plugin to check if devices are rooted / jailbroken.</description>
     <releaseNotes>First release.</releaseNotes>
@@ -31,22 +31,22 @@
   <files>
     <file src="icon.png" target="" />
 	<!-- Cross-platform reference assemblies -->
-	<file src="Xamarin.Forms.RootCheck\bin\Release\netstandard1.0\Xamarin.Forms.RootCheck.dll" target="lib\netstandard1.0\Xamarin.Forms.RootCheck.dll" />
-	<file src="Xamarin.Forms.RootCheck\bin\Release\netstandard1.0\Xamarin.Forms.RootCheck.xml" target="lib\netstandard1.0\Xamarin.Forms.RootCheck.xml" />
+	<file src="src\RootCheck.Forms\bin\Release\netstandard1.0\RootCheck.Forms.dll" target="lib\netstandard1.0\RootCheck.Forms.dll" />
+	<file src="src\RootCheck.Forms\bin\Release\netstandard1.0\RootCheck.Forms.xml" target="lib\netstandard1.0\RootCheck.Forms.xml" />
 	
-	<file src="Xamarin.Forms.RootCheck\bin\Release\netstandard2.0\Xamarin.Forms.RootCheck.dll" target="lib\netstandard2.0\Xamarin.Forms.RootCheck.dll" />
-	<file src="Xamarin.Forms.RootCheck\bin\Release\netstandard2.0\Xamarin.Forms.RootCheck.xml" target="lib\netstandard2.0\Xamarin.Forms.RootCheck.xml" />
+	<file src="src\RootCheck.Forms\bin\Release\netstandard2.0\RootCheck.Forms.dll" target="lib\netstandard2.0\RootCheck.Forms.dll" />
+	<file src="src\RootCheck.Forms\bin\Release\netstandard2.0\RootCheck.Forms.xml" target="lib\netstandard2.0\RootCheck.Forms.xml" />
 
 	<!-- iOS reference assemblies -->
-	<file src="Xamarin.Forms.RootCheck\bin\Release\xamarin.ios10\Xamarin.Forms.RootCheck.dll" target="lib\xamarin.ios10\Xamarin.Forms.RootCheck.dll" />
-	<file src="Xamarin.Forms.RootCheck\bin\Release\xamarin.ios10\Xamarin.Forms.RootCheck.xml" target="lib\xamarin.ios10\Xamarin.Forms.RootCheck.xml" />
+	<file src="src\RootCheck.Forms\bin\Release\xamarin.ios10\RootCheck.Forms.dll" target="lib\xamarin.ios10\RootCheck.Forms.dll" />
+	<file src="src\RootCheck.Forms\bin\Release\xamarin.ios10\RootCheck.Forms.xml" target="lib\xamarin.ios10\RootCheck.Forms.xml" />
 
 	<!-- Android reference assemblies -->
-	<file src="Xamarin.Forms.RootCheck\bin\Release\monoandroid90\Xamarin.Forms.RootCheck.dll" target="lib\monoandroid90\Xamarin.Forms.RootCheck.dll" />
-	<file src="Xamarin.Forms.RootCheck\bin\Release\monoandroid90\Xamarin.Forms.RootCheck.xml" target="lib\monoandroid90\Xamarin.Forms.RootCheck.xml" />
+	<file src="src\RootCheck.Forms\bin\Release\monoandroid90\RootCheck.Forms.dll" target="lib\monoandroid90\RootCheck.Forms.dll" />
+	<file src="src\RootCheck.Forms\bin\Release\monoandroid90\RootCheck.Forms.xml" target="lib\monoandroid90\RootCheck.Forms.xml" />
 
 	<!-- UWP reference assemblies -->
-	<file src="Xamarin.Forms.RootCheck\bin\Release\uap10.0.16299\Xamarin.Forms.RootCheck.dll" target="lib\UAP10.0\Xamarin.Forms.RootCheck.dll" />
-	<file src="Xamarin.Forms.RootCheck\bin\Release\uap10.0.16299\Xamarin.Forms.RootCheck.xml" target="lib\UAP10.0\Xamarin.Forms.RootCheck.xml" />
+	<file src="src\RootCheck.Forms\bin\Release\uap10.0.16299\RootCheck.Forms.dll" target="lib\UAP10.0\RootCheck.Forms.dll" />
+	<file src="src\RootCheck.Forms\bin\Release\uap10.0.16299\RootCheck.Forms.xml" target="lib\UAP10.0\RootCheck.Forms.xml" />
   </files>
 </package>

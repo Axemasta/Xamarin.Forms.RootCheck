@@ -1,5 +1,7 @@
 ﻿using RootCheck.Core;
 using System;
+using System.ComponentModel;
+using System.Threading;
 
 namespace RootCheck.Maui
 {
@@ -8,7 +10,9 @@ namespace RootCheck.Maui
     /// </summary>
     public static class RootChecker
     {
-        private static Lazy<IChecker> platformImplementation = new Lazy<IChecker>(() => CreateChecker(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        private static IChecker customInstance;
+
+        private static readonly Lazy<IChecker> platformImplementation = new Lazy<IChecker>(CreateChecker, LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Returns whether the device is rooted
@@ -17,7 +21,7 @@ namespace RootCheck.Maui
         {
             get
             {
-                var checker = platformImplementation.Value;
+                var checker = customInstance ?? platformImplementation.Value;
 
                 if (checker is null)
                     return false;
@@ -29,6 +33,13 @@ namespace RootCheck.Maui
         private static IChecker CreateChecker()
         {
             return new PlatformChecker();
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void SetInstance(IChecker instance)
+        {
+            // Allow easier mocking from unit tests.
+            customInstance = instance;
         }
     }
 }
